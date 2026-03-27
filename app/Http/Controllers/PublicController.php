@@ -84,10 +84,7 @@ class PublicController extends Controller
             'interest' => 'nullable|string|max:100'
         ]);
         Message::create($validated);
-        $message = app()->getLocale() == 'cs'
-            ? 'Vaše zpráva byla úspěšně odeslána. Ozveme se vám co nejdříve!'
-            : 'Your message has been successfully sent. We will get back to you as soon as possible!';
 
-        return back()->with('success', $message);
+        return back()->with('success', __('contact.success'));
     }
 }

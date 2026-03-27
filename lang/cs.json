@@ -23,6 +23,12 @@
     "team.adam.text": "Dlouholetý partner Davida. Technologický geek a autor custom 'hacks' a inovací, který vyřeší každý 'neresitelný' problém.",
     "team.helena.title": "Back Office",
     "team.helena.text": "Klidná síla v pozadí našeho vývoje. Stará se o administrativu a hladký průběh komunikace, abychom se mohli soustředit na tvoření.",
+    "error.404.title": "Stránka nenalezena",
+    "error.404.text": "Stránka, kterou hledáte, neexistuje nebo byla přesunuta.",
+    "error.500.title": "Chyba serveru",
+    "error.500.text": "Omlouváme se, došlo k neočekávané chybě. Pracujeme na opravě.",
+    "error.back_home": "Zpět domů",
+    "contact.success": "Vaše zpráva byla úspěšně odeslána. Ozveme se vám co nejdříve!",
     "global.address": "Písecká 2228/4, 130 00 Praha 3 – Vinohrady",
     "global.email": "info@ws4u.cz"
 }

@@ -23,6 +23,12 @@
     "team.adam.text": "David's long-term partner. Tech geek and author of custom 'hacks' and innovations, solving every 'unsolvable' problem.",
     "team.helena.title": "Back Office",
     "team.helena.text": "Calm force behind our development. Handles administration and smooth communication, so we can focus on creating.",
+    "error.404.title": "Page Not Found",
+    "error.404.text": "The page you are looking for does not exist or has been moved.",
+    "error.500.title": "Server Error",
+    "error.500.text": "Sorry, an unexpected error occurred. We are working on a fix.",
+    "error.back_home": "Back Home",
+    "contact.success": "Your message has been successfully sent. We will get back to you as soon as possible!",
     "global.address": "Písecká 2228/4, 130 00 Praha 3 – Vinohrady",
     "global.email": "info@ws4u.cz"
 }
