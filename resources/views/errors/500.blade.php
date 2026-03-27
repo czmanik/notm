@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Chyba serveru – NOTM')
+@section('title', 'Chyba serveru – WS4U')
 @section('content')
 <div class="gradient-notm min-h-screen flex items-center justify-center px-4">
     <div class="text-center">
