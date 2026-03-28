@@ -87,10 +87,6 @@
                 <span>|</span>
                 <a href="/en" class="{{ app()->getLocale() == 'en' ? 'text-sky-400' : 'hover:text-slate-300' }}">EN</a>
             </div>
-
-            <div class="mt-8 opacity-20 hover:opacity-100 transition-opacity duration-500">
-                <p class="text-[10px] text-slate-700 mb-2">{{ app()->getLocale() == 'cs' ? 'Máte přístupový kód?' : 'Have an access code?' }}</p>
-            </div>
         </div>
     </div>
 
