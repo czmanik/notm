@@ -1,35 +1,41 @@
 @extends('layouts.app')
-@section('title', 'O nás – NOTM')
+@section('title', __('about.title') . ' – WS4U')
 @section('content')
-<div class="gradient-notm text-white py-20 px-4">
+<div class="gradient-ws4u text-white py-20 px-4">
     <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-5xl font-black mb-6">O NOTM</h1>
-        <p class="text-xl text-slate-300">Jsme tým Laravel nadšenců se sídlem v Praze, kteří věří, že správná technologie mění byznys.</p>
+        <h1 class="text-5xl font-black mb-6">{{ __('about.title') }}</h1>
+        <p class="text-xl text-slate-300">{{ __('about.sub') }}</p>
     </div>
 </div>
 <section class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-                <h2 class="text-3xl font-bold text-slate-900 mb-6">Náš příběh</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">NOTM vznikl z jednoduché myšlenky: většina firem potřebuje spolehlivého technologického partnera, který nejen napíše kód, ale skutečně rozumí jejich byznysu.</p>
-                <p class="text-slate-600 leading-relaxed mb-4">Specializujeme se výhradně na Laravel ekosystém. To nám umožňuje dosahovat výjimečné kvality a rychlosti vývoje, kterou jako generalistická agentura nikdy nedosáhneme.</p>
-                <p class="text-slate-600 leading-relaxed">Vedle zakázkového vývoje jsme vytvořili tři vertikální produkty – Fotáček.cz, GastroTech a MaponCulture – které slouží specifickým odvětvím a neustále je vylepšujeme na základě zpětné vazby desítek klientů.</p>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">{{ app()->getLocale() == 'cs' ? 'Náš příběh' : 'Our Story' }}</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    {{ app()->getLocale() == 'cs' ? 'WS4U vznikl z jednoduché myšlenky: většina firem potřebuje spolehlivého technologického partnera, který nejen napíše kód, ale skutečně rozumí jejich byznysu.' : 'WS4U was born from a simple idea: most companies need a reliable technology partner who doesn\'t just write code, but truly understands their business.' }}
+                </p>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    {{ app()->getLocale() == 'cs' ? 'Specializujeme se výhradně na Laravel ekosystém. To nám umožňuje dosahovat výjimečné kvality a rychlosti vývoje, kterou jako generalistická agentura nikdy nedosáhneme.' : 'We specialize exclusively in the Laravel ecosystem. This allows us to achieve exceptional quality and speed of development that we would never reach as a generalist agency.' }}
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    {{ app()->getLocale() == 'cs' ? 'Vedle zakázkového vývoje jsme vytvořili tři vertikální produkty – Fotáček.cz, GastroTech a MaponCulture – které slouží specifickým odvětvím a neustále je vylepšujeme na základě zpětné vazby desítek klientů.' : 'In addition to custom development, we have created three vertical products – Fotáček.cz, GastroTech, and MaponCulture – which serve specific industries and we constantly improve them based on feedback from dozens of clients.' }}
+                </p>
             </div>
             <div class="space-y-6">
-                <div class="bg-slate-50 rounded-2xl p-6">
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
                     <div class="flex items-center gap-4 mb-3">
                         <div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center text-xl">🎯</div>
-                        <h3 class="font-bold text-slate-800">Naše mise</h3>
+                        <h3 class="font-bold text-slate-800">{{ app()->getLocale() == 'cs' ? 'Naše mise' : 'Our Mission' }}</h3>
                     </div>
-                    <p class="text-slate-600 text-sm">Pomáhat firmám růst prostřednictvím digitálních produktů, které jsou spolehlivé, škálovatelné a snadno použitelné.</p>
+                    <p class="text-slate-600 text-sm">{{ app()->getLocale() == 'cs' ? 'Pomáhat firmám růst prostřednictvím digitálních produktů, které jsou spolehlivé, škálovatelné a snadno použitelné.' : 'Helping companies grow through digital products that are reliable, scalable and easy to use.' }}</p>
                 </div>
-                <div class="bg-slate-50 rounded-2xl p-6">
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
                     <div class="flex items-center gap-4 mb-3">
                         <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-xl">👁️</div>
-                        <h3 class="font-bold text-slate-800">Naše vize</h3>
+                        <h3 class="font-bold text-slate-800">{{ app()->getLocale() == 'cs' ? 'Naše vize' : 'Our Vision' }}</h3>
                     </div>
-                    <p class="text-slate-600 text-sm">Stát se referenční Laravel agenturou ve střední Evropě, na kterou se firmy obracejí, když chtějí skutečně kvalitní výsledky.</p>
+                    <p class="text-slate-600 text-sm">{{ app()->getLocale() == 'cs' ? 'Stát se referenční Laravel agenturou ve střední Evropě, na kterou se firmy obracejí, když chtějí skutečně kvalitní výsledky.' : 'Becoming the reference Laravel agency in Central Europe, where companies turn to when they want truly high-quality results.' }}</p>
                 </div>
             </div>
         </div>
@@ -37,26 +43,36 @@
 </section>
 <section class="py-16 bg-slate-50">
     <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Náš tým</h2>
+        <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">{{ app()->getLocale() == 'cs' ? 'Náš tým' : 'Our Team' }}</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-2xl p-8 text-center border border-slate-100 shadow-sm">
-                <div class="w-20 h-20 bg-gradient-to-br from-sky-400 to-indigo-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-black">J</div>
-                <h3 class="font-bold text-slate-800 text-lg">Jan Novák</h3>
-                <p class="text-sky-600 text-sm font-medium mb-3">Founder & Lead Developer</p>
-                <p class="text-slate-500 text-sm">10 let zkušeností s Laravel. Předtím pracoval v pražském startupu jako CTO.</p>
+            <!-- David -->
+            <div class="bg-white rounded-2xl p-8 text-center border border-slate-100 shadow-sm card-hover">
+                <div class="w-20 h-20 bg-gradient-to-br from-sky-400 to-indigo-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-black">D</div>
+                <h3 class="font-bold text-slate-800 text-lg">David Biksadský</h3>
+                <p class="text-sky-600 text-sm font-medium mb-3">{{ __('team.david.title') }}</p>
+                <p class="text-slate-500 text-sm leading-relaxed">{{ __('team.david.text') }}</p>
             </div>
-            <div class="bg-white rounded-2xl p-8 text-center border border-slate-100 shadow-sm">
-                <div class="w-20 h-20 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-black">K</div>
-                <h3 class="font-bold text-slate-800 text-lg">Klára Horáková</h3>
-                <p class="text-sky-600 text-sm font-medium mb-3">Product Designer & Frontend</p>
-                <p class="text-slate-500 text-sm">Specialistka na UI/UX a Tailwind CSS. Dbá na to, aby produkty NOTM byly nejen funkční, ale i krásné.</p>
+            <!-- Adam -->
+            <div class="bg-white rounded-2xl p-8 text-center border border-slate-100 shadow-sm card-hover">
+                <div class="w-20 h-20 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-black">A</div>
+                <h3 class="font-bold text-slate-800 text-lg">Adam Vincour</h3>
+                <p class="text-sky-600 text-sm font-medium mb-3">{{ __('team.adam.title') }}</p>
+                <p class="text-slate-500 text-sm leading-relaxed">{{ __('team.adam.text') }}</p>
             </div>
-            <div class="bg-white rounded-2xl p-8 text-center border border-slate-100 shadow-sm">
-                <div class="w-20 h-20 bg-gradient-to-br from-orange-400 to-amber-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-black">M</div>
-                <h3 class="font-bold text-slate-800 text-lg">Michal Šimek</h3>
-                <p class="text-sky-600 text-sm font-medium mb-3">Backend Developer</p>
-                <p class="text-slate-500 text-sm">Laravel expert se zaměřením na výkon, bezpečnost a škálovatelné architektury.</p>
+            <!-- Helena -->
+            <div class="bg-white rounded-2xl p-8 text-center border border-slate-100 shadow-sm card-hover">
+                <div class="w-20 h-20 bg-gradient-to-br from-orange-400 to-amber-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-black">H</div>
+                <h3 class="font-bold text-slate-800 text-lg">Helena Tůmová</h3>
+                <p class="text-sky-600 text-sm font-medium mb-3">{{ __('team.helena.title') }}</p>
+                <p class="text-slate-500 text-sm leading-relaxed">{{ __('team.helena.text') }}</p>
             </div>
+        </div>
+
+        <div class="mt-16 bg-white border border-dashed border-slate-200 rounded-2xl p-8 text-center max-w-2xl mx-auto">
+            <h4 class="text-slate-900 font-bold mb-2">Global Dev Hub (Partners)</h4>
+            <p class="text-slate-500 text-sm leading-relaxed">
+                {{ app()->getLocale() == 'cs' ? 'Spolupracujeme s elitními vývojáři v Indii, což nám umožňuje škálovat projekty v režimu 24/7 pod přísným pražským dohledem a garantovat nejvyšší standardy kódu.' : 'We cooperate with elite developers in India, allowing us to scale projects in 24/7 mode under strict Prague supervision and guarantee the highest code standards.' }}
+            </p>
         </div>
     </div>
 </section>

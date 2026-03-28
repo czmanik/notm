@@ -1,38 +1,67 @@
 @extends('layouts.app')
-@section('title', 'Služby – NOTM')
+@section('title', __('services.title') . ' – WS4U')
 @section('content')
-<div class="gradient-notm text-white py-20 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-5xl font-black mb-6">Naše služby</h1>
-        <p class="text-xl text-slate-300">Od konzultace přes vývoj až po dlouhodobou správu a support.</p>
+<div class="gradient-ws4u text-white py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-5xl font-black mb-6">{{ __('services.title') }}</h1>
+        <p class="text-xl text-slate-300">{{ app()->getLocale() == 'cs' ? 'Od architektury přes vývoj až po AI transformaci a dlouhodobý R&D.' : 'From architecture to development to AI transformation and long-term R&D.' }}</p>
     </div>
 </div>
 <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        @foreach([
-            ['🔍', 'Analýza a konzultace', 'Pomůžeme vám zorientovat se v možnostech a vybrat nejlepší cestu. Bezplatná první konzultace.'],
-            ['🏗️', 'Architektura systémů', 'Návrh škálovatelné, bezpečné a udržitelné architektury pro vaše projekty.'],
-            ['💻', 'Vývoj Laravel aplikací', 'Backend i frontend vývoj v Laravel ekosystému. Čistý kód, testy, dokumentace.'],
-            ['🎨', 'UI/UX Design', 'Moderní, intuitivní rozhraní v Tailwind CSS. Prototypy schválíte ještě před vývojem.'],
-            ['🔗', 'API a integrace', 'Napojení na platební brány, CRM, ERP a libovolné třetí strany přes REST nebo GraphQL API.'],
-            ['🚀', 'Nasazení a DevOps', 'Správa serverů, CI/CD pipelines, monitoring a škálování. Staráme se, aby vám vše běželo.'],
-            ['🛡️', 'Bezpečnostní audity', 'Procházíme váš kód a infrastrukturu s cílem odhalit zranitelnosti dříve, než to udělají jiní.'],
-            ['📊', 'Analytika a reporty', 'Nasazení analytics nástrojů, dashboardy a reporting pro informované rozhodování.'],
-            ['🎓', 'Školení a mentoring', 'Vzdělávání vašeho týmu v Laravelu, best practices a moderních přístupech k vývoji.'],
-        ] as [$icon, $title, $desc])
-        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 card-hover">
-            <div class="text-4xl mb-4">{{ $icon }}</div>
-            <h3 class="font-bold text-slate-800 text-lg mb-3">{{ $title }}</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">{{ $desc }}</p>
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Card 1: Architektura & Konzultace -->
+        <div class="bg-slate-50 rounded-2xl p-10 border border-slate-100 card-hover relative overflow-hidden">
+            <div class="text-5xl mb-6">🏗️</div>
+            <h3 class="font-bold text-slate-800 text-2xl mb-4">{{ __('services.card1.title') }}</h3>
+            <p class="text-slate-600 text-lg leading-relaxed">{{ __('services.card1.text') }}</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+                <span class="badge-pill border-sky-200 text-sky-600 bg-sky-50">System Design</span>
+                <span class="badge-pill border-sky-200 text-sky-600 bg-sky-50">Scalability</span>
+            </div>
         </div>
-        @endforeach
+
+        <!-- Card 2: Legacy Code Refresh -->
+        <div class="bg-slate-50 rounded-2xl p-10 border border-slate-100 card-hover relative overflow-hidden">
+            <div class="text-5xl mb-6">♻️</div>
+            <h3 class="font-bold text-slate-800 text-2xl mb-4">{{ __('services.card2.title') }}</h3>
+            <p class="text-slate-600 text-lg leading-relaxed">{{ __('services.card2.text') }}</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+                <span class="badge-pill border-indigo-200 text-indigo-600 bg-indigo-50">AI-Powered Refactor</span>
+                <span class="badge-pill border-indigo-200 text-indigo-600 bg-indigo-50">PHP 8.x / Laravel 11</span>
+            </div>
+        </div>
+
+        <!-- Card 3: Vývoj na míru v Laravelu -->
+        <div class="bg-slate-50 rounded-2xl p-10 border border-slate-100 card-hover relative overflow-hidden">
+            <div class="text-5xl mb-6">💻</div>
+            <h3 class="font-bold text-slate-800 text-2xl mb-4">{{ __('services.card3.title') }}</h3>
+            <p class="text-slate-600 text-lg leading-relaxed">{{ __('services.card3.text') }}</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+                <span class="badge-pill border-emerald-200 text-emerald-600 bg-emerald-50">Enterprise-Grade</span>
+                <span class="badge-pill border-emerald-200 text-emerald-600 bg-emerald-50">API-First</span>
+            </div>
+        </div>
+
+        <!-- Card 4: AI Integration & R&D -->
+        <div class="bg-slate-50 rounded-2xl p-10 border border-slate-100 card-hover relative overflow-hidden">
+            <div class="text-5xl mb-6">🧠</div>
+            <h3 class="font-bold text-slate-800 text-2xl mb-4">{{ __('services.card4.title') }}</h3>
+            <p class="text-slate-600 text-lg leading-relaxed">{{ __('services.card4.text') }}</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+                <span class="badge-pill border-purple-200 text-purple-600 bg-purple-50">Laravel Copilot</span>
+                <span class="badge-pill border-purple-200 text-purple-600 bg-purple-50">LLM Ops</span>
+            </div>
+        </div>
     </div>
 </section>
-<section class="gradient-notm py-20 px-4">
+
+<section class="gradient-ws4u py-20 px-4">
     <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-white mb-6">Nezávazná konzultace zdarma</h2>
-        <p class="text-slate-300 mb-8">Popište nám váš projekt a my vám do 24 hodin odpovíme s prvním návrhem přístupu.</p>
-        <a href="{{ route('contact') }}" class="inline-block bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all">Kontaktovat nás</a>
+        <h2 class="text-3xl font-bold text-white mb-6">{{ app()->getLocale() == 'cs' ? 'Nezávazná konzultace zdarma' : 'Free Non-binding Consultation' }}</h2>
+        <p class="text-slate-300 mb-8">{{ app()->getLocale() == 'cs' ? 'Popište nám váš projekt a mi vám do 24 hodin odpovíme s prvním návrhem přístupu.' : 'Describe your project and we will respond within 24 hours with a first proposal.' }}</p>
+        <a href="{{ route('contact') }}" class="inline-block bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all shadow-xl">
+            {{ app()->getLocale() == 'cs' ? 'Kontaktovat nás' : 'Contact Us' }}
+        </a>
     </div>
 </section>
 @endsection

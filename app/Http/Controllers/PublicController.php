@@ -84,6 +84,7 @@ class PublicController extends Controller
             'interest' => 'nullable|string|max:100'
         ]);
         Message::create($validated);
-        return back()->with('success', 'Vaše zpráva byla úspěšně odeslána. Ozveme se vám co nejdříve!');
+
+        return back()->with('success', __('contact.success'));
     }
 }
