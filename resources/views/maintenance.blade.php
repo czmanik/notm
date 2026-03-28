@@ -90,7 +90,6 @@
 
             <div class="mt-8 opacity-20 hover:opacity-100 transition-opacity duration-500">
                 <p class="text-[10px] text-slate-700 mb-2">{{ app()->getLocale() == 'cs' ? 'Máte přístupový kód?' : 'Have an access code?' }}</p>
-                <a href="/ws4u-2026-access" class="text-[9px] font-roboto-mono text-slate-800 hover:text-sky-900 transition-colors uppercase tracking-widest">ws4u-2026-access</a>
             </div>
         </div>
     </div>
